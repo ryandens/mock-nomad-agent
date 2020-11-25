@@ -13,6 +13,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: 🐳 Build the Docker image
-      run: |
-      echo "${{ github.token }}" | docker login https://docker.pkg.github.com -u ${GITHUB_ACTOR} --password-stdin
-      docker build 0.X/ --tag docker.pkg.github.com/ryandens/mock-nomad-agent/mock-nomad-agent:latest
+    - run: |
+        echo "${{ github.token }}" | docker login https://docker.pkg.github.com -u ${GITHUB_ACTOR} --password-stdin
+        docker build 0.X/ --tag docker.pkg.github.com/ryandens/mock-nomad-agent/mock-nomad-agent:latest
